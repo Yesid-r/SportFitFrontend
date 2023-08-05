@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BASE_URL } from '../utils/config';
 
 const RegisterProduct = () => {
     const [formData, setFormData] = useState({
@@ -21,7 +22,7 @@ const RegisterProduct = () => {
         try {
             console.log(formData);
             // Send the form data to the API endpoint
-            const response = await fetch('http://localhost:3000/api/product/save', {
+            const response = await fetch(`${BASE_URL}/api/product/save`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

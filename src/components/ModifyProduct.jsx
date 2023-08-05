@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { BASE_URL } from '../utils/config';
 
 const ModifyProduct = () => {
   const { id } = useParams();
@@ -22,7 +23,7 @@ const ModifyProduct = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/product/getOne/${id}`, {
+        const response = await fetch(`${BASE_URL}/api/product/getOne/${id}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -59,7 +60,7 @@ const ModifyProduct = () => {
     e.preventDefault();
     try {
       // Send the form data to the API endpoint
-      const response = await fetch(`http://localhost:3000/api/product/update/${id}`, {
+      const response = await fetch(`${BASE_URL}/api/product/update/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BASE_URL } from '../utils/config';
 
 const ListSells = () => {
     const [sells, setSells] = useState([]);
@@ -6,7 +7,7 @@ const ListSells = () => {
     // Función para obtener los datos de la API
     const fetchData = async () => {
         try {
-            const response = await fetch('http://localhost:3000/api/sell');
+            const response = await fetch(`${BASE_URL}/api/sell`);
             const data = await response.json();
             if (data.status) {
                 setSells(data.data);

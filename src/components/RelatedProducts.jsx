@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import ProductCard from './ProductCard';
+import { BASE_URL } from '../utils/config';
 
 const RelatedProducts = () => {
     const [products, setProducts] = useState([]);
@@ -8,7 +9,7 @@ const RelatedProducts = () => {
       
       const fetchData = async () => {
         try {
-          const response = await fetch('http://localhost:3000/api/product/getAll');
+          const response = await fetch(`${BASE_URL}/api/product/getAll`);
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }

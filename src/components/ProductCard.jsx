@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { BASE_URL } from '../utils/config';
 
 const ProductCard = ({ product }) => {
   const [showAlert, setShowAlert] = useState(false);
@@ -17,7 +18,7 @@ const ProductCard = ({ product }) => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/product/remove/${id}`, { method: 'DELETE' });
+      const response = await fetch(`${BASE_URL}/api/product/remove/${id}`, { method: 'DELETE' });
 
       if (response.ok) {
         console.log(`Producto con id ${id} eliminado correctamente.`);
@@ -49,7 +50,7 @@ const ProductCard = ({ product }) => {
     console.log(`Vender ${sellQuantity} unidades del producto con id: ${product._id}`);
 
     try {
-      const response = await fetch(`http://localhost:3000/api/product/updateStock/${product._id}`, {
+      const response = await fetch(`${BASE_URL}/api/product/updateStock/${product._id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
