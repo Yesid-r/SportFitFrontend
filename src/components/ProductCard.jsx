@@ -30,7 +30,7 @@ const ProductCard = ({ product }) => {
         console.error(`Error al eliminar el producto con id ${id}`);
         setShowAlert(false);
         window.alert('Hubo un error al eliminar el producto.');
-        onDelete(id, false);
+        // onDelete(id, false);
       }
     } catch (error) {
     console.log(error)

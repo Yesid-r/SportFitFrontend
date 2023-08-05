@@ -14,7 +14,7 @@ const ModifyProduct = () => {
     stock: 0,
     image: '',
   });
-  const categories = ['Fitness', 'Running', 'Cycling', 'Soccer', 'Basketball', 'Tennis', 'Swimming', 'Other'];
+  const categories = ['Fitness', 'Running', 'Cycling', 'Football', 'Basketball', 'Tennis', 'Swimming', 'Other'];
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
